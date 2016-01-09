@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/resm.in.iml" filepath="$PROJECT_DIR$/resm.in.iml" />
+      <module fileurl="file://$PROJECT_DIR$/resmin-android-app.iml" filepath="$PROJECT_DIR$/resmin-android-app.iml" />
     </modules>
   </component>
 </project>
