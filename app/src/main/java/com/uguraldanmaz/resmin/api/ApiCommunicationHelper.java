@@ -1,0 +1,43 @@
+package com.uguraldanmaz.resmin.api;
+
+import android.content.Context;
+
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+/**
+ * Created by Ugur Aldanmaz on 10.01.2016 14:25.
+ */
+public class ApiCommunicationHelper {
+
+    private static final String API_ADDRESS = "http://resm.in/api/v1/";
+
+    public static JSONObject get(String address){
+        try {
+            URL url = new URL(API_ADDRESS + address);
+            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+
+            StringBuffer json = new StringBuffer(1024);
+            String tmp="";
+            while((tmp=reader.readLine())!=null)
+                json.append(tmp).append("\n");
+            reader.close();
+
+            JSONObject data = new JSONObject(json.toString());
+
+            if(data.getInt("cod") != 200){
+                return null;
+            }
+
+            return data;
+        }catch(Exception e){
+            return null;
+        }
+    }
+}
