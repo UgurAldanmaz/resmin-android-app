@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class StoryManager {
 
-    private static final String STORY_ADDRESS = "story/list/public/";
+    private static final String STORY_ADDRESS = "story";
 
     public ApiResponse<StoryResult> Get() {
         JSONObject serviceData = ApiCommunicationHelper.get(STORY_ADDRESS);

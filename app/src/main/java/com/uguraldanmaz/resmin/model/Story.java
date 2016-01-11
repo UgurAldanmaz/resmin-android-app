@@ -13,6 +13,7 @@ public class Story {
     private String title;
     private String description;
 
+    /* Not Safe For Work */
     private boolean is_nsfw;
     private boolean is_featured;
 

@@ -14,7 +14,7 @@ import java.net.URL;
  */
 public class ApiCommunicationHelper {
 
-    private static final String API_ADDRESS = "http://resm.in/api/v1/";
+    private static final String API_ADDRESS = "https://staging.resm.in/v2/";
 
     public static JSONObject get(String address){
         try {
