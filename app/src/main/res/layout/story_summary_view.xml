@@ -54,7 +54,7 @@
                 android:layout_height="32dp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:src="@drawable/detailStory" />
+                android:src="@drawable/story_detail" />
         </RelativeLayout>
 
     </RelativeLayout>

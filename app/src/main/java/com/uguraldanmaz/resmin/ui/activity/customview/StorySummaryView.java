@@ -23,6 +23,10 @@ import java.io.InputStream;
  * http://bilprog.org
  * open[at]bilprog[dot]org
  */
+
+/*
+* StoryList icin compound view.
+* */
 public class StorySummaryView extends LinearLayout {
 
     private Story story;

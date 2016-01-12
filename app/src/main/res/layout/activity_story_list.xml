@@ -9,16 +9,9 @@
     tools:context="com.uguraldanmaz.resmin.ui.activity.StoryListActivity">
 
     <ScrollView
+        android:id="@+id/storyListContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <com.uguraldanmaz.resmin.ui.activity.customview.StorySummaryView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-        </com.uguraldanmaz.resmin.ui.activity.customview.StorySummaryView>
-
     </ScrollView>
 
 </LinearLayout>

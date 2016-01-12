@@ -1,7 +1,5 @@
 package com.uguraldanmaz.resmin.api;
 
-import android.content.Context;
-
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -16,27 +14,22 @@ public class ApiCommunicationHelper {
 
     private static final String API_ADDRESS = "https://staging.resm.in/v2/";
 
-    public static JSONObject get(String address){
+    public static JSONObject get(String address) {
         try {
             URL url = new URL(API_ADDRESS + address);
-            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
             StringBuffer json = new StringBuffer(1024);
-            String tmp="";
-            while((tmp=reader.readLine())!=null)
+            String tmp = "";
+            while ((tmp = reader.readLine()) != null)
                 json.append(tmp).append("\n");
             reader.close();
 
             JSONObject data = new JSONObject(json.toString());
-
-            if(data.getInt("cod") != 200){
-                return null;
-            }
-
             return data;
-        }catch(Exception e){
+        } catch (Exception e) {
             return null;
         }
     }

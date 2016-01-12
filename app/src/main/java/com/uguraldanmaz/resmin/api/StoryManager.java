@@ -1,10 +1,13 @@
 package com.uguraldanmaz.resmin.api;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import com.uguraldanmaz.resmin.model.Story;
 import com.uguraldanmaz.resmin.model.StoryCoverImage;
 import com.uguraldanmaz.resmin.model.StoryResult;
+import com.uguraldanmaz.resmin.ui.activity.AsyncActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -14,9 +17,18 @@ import java.util.ArrayList;
 /**
  * Created by Ugur Aldanmaz on 10.01.2016.
  */
-public class StoryManager {
+public class StoryManager extends RestManagerBase {
 
     private static final String STORY_ADDRESS = "story";
+
+    public StoryManager(AsyncActivity context) {
+        super(context);
+    }
+
+    @Override
+    protected void DataReceived(JSONObject data) {
+
+    }
 
     public ApiResponse<StoryResult> Get() {
         JSONObject serviceData = ApiCommunicationHelper.get(STORY_ADDRESS);
@@ -24,7 +36,6 @@ public class StoryManager {
     }
 
     private ApiResponse<StoryResult> ParseStoryJson(JSONObject serviceData) {
-
         try {
 
             ArrayList<Story> stories = new ArrayList<>();
